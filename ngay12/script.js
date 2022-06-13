@@ -127,16 +127,16 @@ season(1);
 season(12);
 season(13);
 
-// let trafficLight = function (light) {
-// if (light == "red") {
-// console.log(`${light} Vượt luôn bạn ê`);
-// } else if (light == "green") {
-// console.log(`{light} Đóng luôn không phải ngại`);
-// } else if (light == "yellow") {
-// console.log(`{light} không phải chậm đâu`);
-// }
-// };
-// trafficLight(red);
+let trafficLight = function (light) {
+  if (light == "red") {
+    console.log(`${light} Vượt luôn bạn ê`);
+  } else if (light == "green") {
+    console.log(`{light} Đóng luôn không phải ngại`);
+  } else if (light == "yellow") {
+    console.log(`{light} không phải chậm đâu`);
+  }
+};
+trafficLight("red");
 
 let calcCommissions = function (totalSales) {
   totalSales = Number(totalSales);
@@ -232,3 +232,4 @@ calcGrade(0);
 calcGrade(15);
 calcGrade(8.5);
 calcGrade(5);
+
