@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Basic</title>
+  </head>
+  <body>
+    <h1 class="heading">Hello DOM</h1>
+    <img class="avatar" src="" alt="" />
+    <link class="profile" rel="stylesheet" href="" />
+    <ul class="favorite">
+      <li>A</li>
+      <li>Play game</li>
+      <li>Listen music</li>
+      <li>D</li>
+    </ul>
+    <div class="clock">Bây giờ là</div>
+    <p class="bio">
+      Thầy giáo ba đẹp trai Thầy giáo Ba đẹp trai Thầy giáo ba đẹp trai Thầy
+      giáo Ba đẹp trai Thầy giáo ba đẹp trai Thầy giáo Ba đẹp trai Thầy giáo Ba
+      đẹp trai Thầy giáo ba đẹp trai Thầy giáo ba đẹp trai Thầy giáo ba đẹp trai
+      Thầy giáo ba đẹp trai Thầy giáo ba đẹp trai Thầy giáo Ba đẹp trai Thầy
+      giáo Ba đẹp trai Thầy giáo ba đẹp trai
+    </p>
+    <p class="num-of-words"></p>
+    <table class="list-students">
+      <tbody>
+        <tr>
+          <td>Giang Hồng Sơn</td>
+        </tr>
+        <tr>
+          <td>Bùi Lan Nhi</td>
+        </tr>
+        <tr>
+          <td>Hoàng Thị Ngọc Linh</td>
+        </tr>
+      </tbody>
+    </table>
+    <script>
+      const heading = "Thầy giáo Ba xinh gái";
+      const avatar =
+        "https://anhnendep.net/wp-content/uploads/2016/03/hinh-anh-girl-xinh-gai-dep-de-thuong-nhat-viet-nam-info.jpg";
+      const profile =
+        "https://loanthehongnhan.vn/tai-hinh-anh-con-gai-dep/imager_34554.jpg";
+
+      // 1. Thay đổi nội dung của thẻ title thành giá trị của heading
+      const eleH1 = document.querySelector(".heading");
+      // 2. Thay đổi nội dung của thẻ h1 thành giá trị của heading
+      document.title = eleH1.textContent;
+
+      eleH1.textContent = heading;
+      // 3. Thay đổi src của thẻ img thành giá trị của avatar
+      const eleImg = document.querySelector(".avatar");
+      eleImg.setAttribute("src", avatar);
+      // 4. Thay đổi src của thẻ link thành giá trị của profile
+      const eleLink = document.querySelector(".profile");
+      eleLink.setAttribute("href", profile);
+      // 5. Thay đổi nội dung của thẻ li đầu tiên trong thẻ ul thành Code application
+      const eleFirstChildUlTag = document.querySelector(
+        ".favorite > li:first-child"
+      );
+      eleFirstChildUlTag.textContent = "Code application";
+      // 6. Thay đổi nội dung của thẻ li cuối cùng trong thẻ ul thành Sleep
+      const eleLastChildUlTag = document.querySelector(
+        ".favorite > li:last-child"
+      );
+      eleLastChildUlTag.textContent = "Sleep";
+      // 7. Thay đổi nội dung của div thành thời gian hiện tại theo mẫu Bây giờ là giờ:phút:giây,
+      // ngày ngày/tháng/năm
+      const eleDivClock = document.querySelector(".clock");
+      const d = new Date();
+      eleDivClock.textContent = `Bây giờ là ${d.getHours()}:${d.getMinutes()}:${d.getSeconds()}, ngày ${d.getDate()}/${
+        d.getMonth() + 1
+      }/${d.getFullYear()}`;
+
+      const eleBioContent = document.querySelector(".bio").textContent;
+      const elePNumOfWord = (document.querySelector(
+        ".num-of-words"
+      ).textContent = `Ở đoạn văn trên có ${
+        eleBioContent.match(/ba/gi).length
+      } từ 'Ba' (không phân biệt chữ hoa, chữ thường).`);
+    </script>
+  </body>
+</html>

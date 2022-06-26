@@ -116,7 +116,7 @@ let season = function (month) {
     console.log(`Summer`);
   } else if (month == 9 || month == 10 || month == 11) {
     console.log(`Fall`);
-  } else if (month > 12) {
+  } else if (month > 12 || month <1) {
     console.log(`NGU VCC`);
   }
 };
@@ -233,3 +233,20 @@ calcGrade(15);
 calcGrade(8.5);
 calcGrade(5);
 
+solveEquation(a, b, c){
+  if (a == 0 || b == 0 || c == 0) {
+    return Infinity;
+  } else if (a == 0 && b == 0 && c != 0) {
+    return null;
+  } else if (a == 0 && b != 0) {
+    return = -c / b;
+  } else if (a != 0) {
+    const delta == b ** 2 - 4a * c;
+    if (delta < 0) return null;
+    const sqrt = delta ** 0.5;
+    return [(-b+sqrt)/(2*a), (-b-sqrt)/(2*a)]
+  }
+};
+console.log(solveEquation(0, 0, 0));
+console.log(solveEquation(10, 2, 4));
+console.log(solveEquation(1, 4, 5));
